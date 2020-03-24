@@ -14,62 +14,67 @@
   
   在广州做java/asp开发, ssh + ext
 
-      技术:
-        ssh + ext
+    技术:
+    ssh + ext
 
-      详情:
-        1. sql调优 【sqlserver/oracle】
-        2. spring 【自行研发sbring,提供更轻的方式】
-        3. 浏览器兼容 【ie6-8,ext】
-        4. 开发框架Call 【调用存储过程,减少业务代码,提供热更新】
-        5. 开发框架CallSql 【通过ajax,新增或修改存储过程】
-        6. 基于Call与CallSql 配合工作流引擎,开发元数据开发平台
+    详情:
+    1. sql调优 【sqlserver/oracle】
+    2. spring 【自行研发sbring,提供更轻的方式】
+    3. 浏览器兼容 【ie6-8,ext】
+    4. 开发框架Call 【调用存储过程,减少业务代码,提供热更新】
+    5. 开发框架CallSql 【通过ajax,新增或修改存储过程】
+    6. 基于Call与CallSql 配合工作流引擎,开发元数据开发平台
 
 - 2013
 
   原公司破产,到北京,国企性质,大型项目,工作重心主要在第三方插件/厂商的对接与开发
-        1. highchair 
-        2. FineRepor/帆软 报表
-        3. petrel 三维地质建模 
-        4. silverlight  富前端
+
+    1. highchair 
+    2. FineRepor/帆软 报表
+    3. petrel 三维地质建模 
+    4. silverlight  富前端
    
   在首次使用bootstrap,快速搭建项目介绍页面后,工作重心逐渐转向重构页面
-        1. 使用avalon,而非静态资源的彻底分离js提供前端mvvm【兼容ie6】
-        2. 重构首页 【原来由iframe拼接各个项目组的首页实现】
-        3. 主导js的彻底分离 【css已经分离,但js依赖i18n文本,初始化数据,需要提供解决方案】
-        4. 提供mvvm组件 
-        5. 开发loader系列,解决新按需加载问题 【参考easy/ext-loader】
-        6. 开发Max,用于进行统计 【js版与java版,针对前端包含元数据,但自定义统计的情况】
-        7. 开发towcat,深度学习jsp,以针对前端优化       
+
+    1. 使用avalon,而非静态资源的彻底分离js提供前端mvvm【兼容ie6】
+    2. 重构首页 【原来由iframe拼接各个项目组的首页实现】
+    3. 主导js的彻底分离 【css已经分离,但js依赖i18n文本,初始化数据,需要提供解决方案】
+    4. 提供mvvm组件 
+    5. 开发loader系列,解决新按需加载问题 【参考easy/ext-loader】
+    6. 开发Max,用于进行统计 【js版与java版,针对前端包含元数据,但自定义统计的情况】
+    7. 开发towcat,深度学习jsp,以针对前端优化       
 
 - 2015
   
   创业团队,包含独立的前端团队
-      技术:
-        handlebars + backbone + seajs + 自定义组件
-      详情:
-        1. 基于easyui,快速搭建工作台
-        2. 基于angular,搭建教师录题  【用于技术尝试】
-        3. 基于react,开发公司首页  【用于技术尝试】
-        4. 开发教师端  【handlebars + backbone】
-        5. 开发Formula  【初高中数学公式的词法分析器,旨在前端canvs绘制公式】
-        6. 开发scanpy 【基于python的爬虫】
-        7. 开发wordExport 【基于word进行题目的导入】
-        8. 开发clean 【对爬虫与导入的题库,进行防伪的删除】
+  
+  技术:
+    handlebars + backbone + seajs + 自定义组件
+      
+  详情:
+    1. 基于easyui,快速搭建工作台
+    2. 基于angular,搭建教师录题  【用于技术尝试】
+    3. 基于react,开发公司首页  【用于技术尝试】
+    4. 开发教师端  【handlebars + backbone】
+    5. 开发Formula  【初高中数学公式的词法分析器,旨在前端canvs绘制公式】
+    6. 开发scanpy 【基于python的爬虫】
+    7. 开发wordExport 【基于word进行题目的导入】
+    8. 开发clean 【对爬虫与导入的题库,进行防伪的删除】
 
 - 2016
   
   用友云彩项目组
+
       技术:
         knockout + iuap[集团库]
       详情:
         1. 开发i18n  【临时解决中英文切换】
-        2. 
-
+        2. chrome 插件 解决项目交互
 
 - 2018
   
   在家带娃,接项目
+
       技术:
         gen [根据模型,创建代码生成器]
 
@@ -102,26 +107,31 @@
   维护痛点是actions爆炸【包括数量与文件大小】,根源是弱service思想,即service只是代理dao的一层,目的是减少复用,减少一个业务跳转的长度,在面对维护和业务更新时,不会照成大规模破坏
 
   Call符合了原有的开发模式,将具体的业务,完全交给了`存储过程`,思路如下
-  1.一个超级接口actions 
-  2.根据参数,选择并执行存储过程
-  3.业务实现在存储过程中
+  
+  1. 一个超级接口actions 
+  2. 根据参数,选择并执行存储过程
+  3. 业务实现在存储过程中
 
   这种高耦合的反模式,在需求不明确,模型不明确时,可以提供更快的对接开发效果,也可以提供一定的热更新的能力
   
   另外,更快的业务开发,提供了大量时间,用于关注前端【ext】
 
 - CallSql [2013]
+
   通过后台管理的页面,维护整个数据库的存储过程
 
   为所有人提供了简单热部署的能力,而非通过运维/dba【没有服务器密码】,进行存储过程的修改
 
 - loader [2014]
+
   解决内部组件,依赖的问题,组件风格参考easyui,loader参考ext/easyui
 
 - Max [2014]
+
   提供前端元数据统计的计算能力【highchair有相同的能力】,主要针对动态table设置统计的所依赖的库
 
 - Towcat [2014]
+
   深度了解tomcat,以优化前端,此时,前端依然是jsp+avalon,而非静态资源的彻底分离,了解tomcat后,实施以下工作
 
     1. js的彻底分离  【js加速】
@@ -132,6 +142,7 @@
     5. 提供cookie库 【解决cookie冲突的问题】
 
 - Formula [2015]
+
   教师录题时的公式,使用截图的方式进行快速处理,包含以下问题
     1. 通常白底而非透明
     2. 大小与清晰度受限,难以调节
@@ -145,27 +156,34 @@
 
 
 - ext [2016]
+
   https://github.com/Glimis/ext  
 
   ext普及/教程
 
 - discard-react-demo [2016]
+
   https://github.com/Glimis/discard-react-demo
 
   react0.13 技术选型时的记录,开发的一些小工具
 
 - discard-chrome [2016]
+
   https://github.com/Glimis/discard-chrome
 
   chrome插件
 
-  jd爬虫
+  1. jd爬虫
+
     项目组需要选择行的获取jd的数据,1000条,每人手填50条,写爬虫没有必要,此处使用chrome插件,抓取选中的jd页面数据,而后填写如云彩数据页面中,进行录入
-  bug导航
+  
+  2. bug导航
+
     通过chrome插件,第一时间获取bug数 【chrome插件,启动后10min抓取一次Jira数据做推送】
     后续包括,通过chrome自动提交解决描述,发送部署邮件,发送日报等
 
-- jq-modal [2017] 
+- jq-modal [2017]
+
   https://github.com/Glimis/jq-modal
 
   组内有很多模态框,分散在个个业务文件夹内,在业务拓展时,要求对模态框进行复用 [通过工程,而非重构来解决]
@@ -187,6 +205,7 @@
 
 
 - i18n [2016]
+
   https://github.com/Glimis/discard-translate
     有道翻译
   https://github.com/Glimis/discard-i18n
@@ -215,17 +234,21 @@
   
 
 - 云彩前端 [2017]
+
   https://github.com/Glimis/books
   前端普及
 
 - gen [2018]
+
   https://github.com/Glimis/gen
   快速生成初始化代码
 
 - vue 资料
+
   https://github.com/Glimis/vue-doc
   
 - webpack4 资料
+
   https://github.com/Glimis/webpack4
 
 - Compiler
