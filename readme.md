@@ -5,6 +5,7 @@
 - Github: http://github.com/glimis 
 - 母语: java
 - 期望岗位: 前端
+- b站:https://space.bilibili.com/228173207/video
 
 ## 经历简述
 - 大学+高中期间
